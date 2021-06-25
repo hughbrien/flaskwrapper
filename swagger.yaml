@@ -1,0 +1,47 @@
+openapi: 3.0.1
+info:
+  title: Transposit Wrapper GraphQL
+  version: v1
+  description: >-
+
+    # Authentication and Requests
+
+    We use standard HTTP Authentication over HTTPS to authorize your requests.
+
+    <pre><code>curl --request GET \<br>--header 'Content-Type:
+    application/vnd.api+json' \<br>--header 'Authorization: Bearer <span
+    id="token">YOUR_TOKEN</span>' \<br>--url
+    https://{host}/v1/services</code></pre>
+  x-logo:
+    url: >-
+      https://assets.rootly.io/assets/logo/rootly-7d4aa42752841c6da862630427150431a13aadee3d9e528b92bd0fded5dbca1e.svg
+    alt: TranspositWrapper
+servers:
+  - url: demo.transposit.io
+    variables: {}
+    description: 'Transposit URL '
+paths:
+  /services/list:
+    summary: 'List Harness Services '
+    description: 'List Services '
+    get:
+      summary: Get List of Services from Harness
+      description: ''
+      operationId: service_list
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - service_list
+  /rollback:
+    summary: Rollback a deployment
+    description: Rollback a deployment
+    get:
+      summary: Rollback Deployment
+      description: Rollback Deployment
+      operationId: rollback
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - rollback
