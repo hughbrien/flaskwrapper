@@ -2,7 +2,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
-@app.route('/list_services')
+@app.route('/services/list')
 def list_service():
 
     service_list = {"services":[
