@@ -96,7 +96,7 @@ def main():
     for i in docs:
         data.append(i)
 
-    return render_template('home.html', cform=cform, dform=dform, uform=uform, \
+    return render_template('mongo-ui.html', cform=cform, dform=dform, uform=uform, \
                            data=data, reset=reset)
 
 
