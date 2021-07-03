@@ -1,4 +1,8 @@
 from flask import Flask, render_template
+from flask import jsonify
+from test import context
+
+
 
 app = Flask(__name__)
 
@@ -23,6 +27,12 @@ def users(user):
 @app.route('/servers/json/<server>')
 def servers(server):
    return render_template('servers.json', name = server)
+
+@app.route('/welcome/<country>/<username>', methods=['GET','POST'])
+def welcome(country, username):
+        return jsonify({'name': username, 'country': country}), 200
+
+
 
 if __name__ == '__main__':
     app.run()
