@@ -12,23 +12,7 @@ Create Virtual Environment -
     ./venv/bin/python -m flask run
     flask run 
 
-
-Deactivate - To deactivate the virtual environment. 
-    
+Deactivate - To deactivate the virtual environment.     
     deactivate
 
-
 Now run the project. 
-
-Updated 
-
-Updates for a new deployment
-
-Updating Documentation
-
-
-
-
-
-
-
