@@ -2,6 +2,20 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+
+
+@app.route('/')
+def list_service():
+
+    service_list = {"services":[
+        "service-list":"/services/list",
+        "rollback_service":"/rollback_service'",
+        "/users/<user>":"/users/<user>",
+        "/servers/json":"/servers/json",
+    ]
+     }
+    return service_list
+
 @app.route('/services/list')
 def list_service():
 
