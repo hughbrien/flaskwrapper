@@ -1,17 +1,12 @@
-# set base image (host OS)
-FROM python:3.8
+# syntax=docker/dockerfile:1
 
-# set the working directory in the container
-WORKDIR /code
+FROM python:3.8-slim-buster
 
-# copy the dependencies file to the working directory
-COPY requirements.txt .
+WORKDIR /python-docker
 
-# install dependencies
-RUN pip install -r requirements.txt
+COPY requirements.txt requirements.txt
+RUN pip3 install -r requirements.txt
 
-# copy the content of the local src directory to the working directory
-COPY src/ .
+COPY . .
 
-# command to run on container start
-CMD [ "python", "./server.py" ]
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
